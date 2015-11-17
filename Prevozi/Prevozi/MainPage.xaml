@@ -1,0 +1,50 @@
+﻿<Page
+    x:Class="Prevozi.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Prevozi"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <SplitView x:Name="MySplitView" DisplayMode="CompactOverlay" IsPaneOpen="False" 
+               CompactPaneLength="50" OpenPaneLength="150">
+            <SplitView.Pane>
+                <StackPanel Background="Orange">
+                    <Button x:Name="HamburgerButton" FontFamily="Segoe MDL2 Assets" Content="&#xE700;"
+                    Width="50" Height="50" Click="btnHamburger_Click"/>
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:Name="btnHome" FontFamily="Segoe MDL2 Assets" Content="&#xE10F;"
+                    Width="50" Height="50"/>
+                        <TextBlock Text="Domov" FontSize="18" VerticalAlignment="Center" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:Name="btnSearch" FontFamily="Segoe MDL2 Assets" Content="&#xE11A;"
+                        Width="50" Height="50"/>
+                        <TextBlock Text="Išči prevoz" FontSize="18" VerticalAlignment="Center" />
+                    </StackPanel>
+                </StackPanel>
+            </SplitView.Pane>
+            <SplitView.Content>
+                <Grid Margin="10,-10,-10,10"/>
+            </SplitView.Content>
+        </SplitView>
+        <RelativePanel>
+            <Button x:Name="btnIskanje" Content="Išči" HorizontalAlignment="Left" Margin="63,207,0,0" VerticalAlignment="Top" Width="270" Click="btnIskanje_Click" />
+            <DatePicker HorizontalAlignment="Left" Margin="94,152,0,0" VerticalAlignment="Top" Width="239"/>
+            <TextBox x:Name="txtOdhod" HorizontalAlignment="Left" Margin="94,64,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="239" PlaceholderText="Kraj odhoda"/>
+            <TextBox x:Name="txtPrihod" HorizontalAlignment="Left" Margin="94,101,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="239" PlaceholderText="Kraj prihoda"/>
+            <TextBlock x:Name="tbIskanje" HorizontalAlignment="Left" Margin="63,39,0,0" TextWrapping="Wrap" Text="Iskanje" VerticalAlignment="Top"/>
+            <TextBlock x:Name="tbZadnjaIskanja" HorizontalAlignment="Left" Margin="63,277,0,0" TextWrapping="Wrap" Text="Zadnja iskanja" VerticalAlignment="Top"/>
+            <ListView x:Name="lvZadnjaIskanja" HorizontalAlignment="Left" Height="291" Margin="37,321,0,0" VerticalAlignment="Top" Width="267"/>
+            <TextBlock x:Name="tbOdhod" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" Margin="63,64,-32.333,-76"/>
+            <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="31" Margin="63,101,-32.333,-113"/>
+            <TextBlock x:Name="textBlock_Copy1" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="31" Margin="63,152,-32.333,-164"/>
+        </RelativePanel>
+    </Grid>
+</Page>
