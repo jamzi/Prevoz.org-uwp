@@ -427,8 +427,11 @@ D:\Projekti\VS\emp-seminarska\Prevozi\Prevozi\obj\x86\Debug\ListCarshare.g.i.cs
 D:\Projekti\VS\emp-seminarska\Prevozi\Prevozi\obj\x86\Debug\ListCarshare.g.cs
 D:\Projekti\VS\emp-seminarska\Prevozi\Prevozi\obj\x86\Debug\ListCarshare.xaml
 D:\Projekti\VS\emp-seminarska\Prevozi\Prevozi\obj\x86\Debug\ListCarshare.xbf
-D:\Projekti\VS\emp-seminarska\Prevozi\Prevozi\bin\x86\Debug\Carshare.xbf
-D:\Projekti\VS\emp-seminarska\Prevozi\Prevozi\obj\x86\Debug\Carshare.g.i.cs
-D:\Projekti\VS\emp-seminarska\Prevozi\Prevozi\obj\x86\Debug\Carshare.g.cs
-D:\Projekti\VS\emp-seminarska\Prevozi\Prevozi\obj\x86\Debug\Carshare.xaml
-D:\Projekti\VS\emp-seminarska\Prevozi\Prevozi\obj\x86\Debug\Carshare.xbf
+D:\Projekti\VS\emp-seminarska\Prevozi\Prevozi\bin\x86\Debug\Core\Newtonsoft.Json.dll
+D:\Projekti\VS\emp-seminarska\Prevozi\Prevozi\bin\x86\Debug\Newtonsoft.Json.dll
+D:\Projekti\VS\emp-seminarska\Prevozi\Prevozi\obj\x86\Debug\Core\Newtonsoft.Json.dll
+D:\Projekti\VS\emp-seminarska\Prevozi\Prevozi\bin\x86\Debug\CarshareDetails.xbf
+D:\Projekti\VS\emp-seminarska\Prevozi\Prevozi\obj\x86\Debug\CarshareDetails.g.i.cs
+D:\Projekti\VS\emp-seminarska\Prevozi\Prevozi\obj\x86\Debug\CarshareDetails.g.cs
+D:\Projekti\VS\emp-seminarska\Prevozi\Prevozi\obj\x86\Debug\CarshareDetails.xaml
+D:\Projekti\VS\emp-seminarska\Prevozi\Prevozi\obj\x86\Debug\CarshareDetails.xbf

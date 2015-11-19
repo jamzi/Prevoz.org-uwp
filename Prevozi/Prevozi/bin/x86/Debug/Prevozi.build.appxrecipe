@@ -60,6 +60,9 @@
     <AppxPackagedFile Include="D:\Projekti\VS\emp-seminarska\Prevozi\Prevozi\bin\x86\Debug\Core\Microsoft.Win32.Primitives.dll">
       <PackagePath>Microsoft.Win32.Primitives.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Projekti\VS\emp-seminarska\Prevozi\Prevozi\bin\x86\Debug\Core\Newtonsoft.Json.dll">
+      <PackagePath>Newtonsoft.Json.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Projekti\VS\emp-seminarska\Prevozi\Prevozi\bin\x86\Debug\Core\Prevozi.exe">
       <PackagePath>Prevozi.exe</PackagePath>
     </AppxPackagedFile>

@@ -22,7 +22,7 @@
     <AppXManifest Include="D:\Projekti\VS\emp-seminarska\Prevozi\Prevozi\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-11-17T18:39:45.671</Modified>
+      <Modified>2015-11-19T12:42:57.170</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -66,7 +66,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Projekti\VS\emp-seminarska\Prevozi\Prevozi\bin\x86\Debug\Core\entrypoint\Prevozi.exe">
       <PackagePath>entrypoint\Prevozi.exe</PackagePath>
-      <Modified>2015-11-17T18:39:44.834</Modified>
+      <Modified>2015-11-19T12:42:56.271</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Projekti\VS\emp-seminarska\Prevozi\Prevozi\bin\x86\Debug\Core\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -80,13 +80,17 @@
       <PackagePath>Microsoft.Win32.Primitives.dll</PackagePath>
       <Modified>2015-10-27T17:54:31.533</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Projekti\VS\emp-seminarska\Prevozi\Prevozi\bin\x86\Debug\Core\Newtonsoft.Json.dll">
+      <PackagePath>Newtonsoft.Json.dll</PackagePath>
+      <Modified>2015-10-28T13:37:12.378</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Projekti\VS\emp-seminarska\Prevozi\Prevozi\bin\x86\Debug\Core\Prevozi.exe">
       <PackagePath>Prevozi.exe</PackagePath>
-      <Modified>2015-11-17T18:39:45.670</Modified>
+      <Modified>2015-11-19T12:42:57.168</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Projekti\VS\emp-seminarska\Prevozi\Prevozi\bin\x86\Debug\Core\Prevozi.xr.xml">
       <PackagePath>Prevozi.xr.xml</PackagePath>
-      <Modified>2015-11-17T18:08:04.322</Modified>
+      <Modified>2015-11-19T12:32:19.343</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Projekti\VS\emp-seminarska\Prevozi\Prevozi\bin\x86\Debug\Core\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
@@ -94,7 +98,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Projekti\VS\emp-seminarska\Prevozi\Prevozi\bin\x86\Debug\Core\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2015-11-17T18:39:45.313</Modified>
+      <Modified>2015-11-19T12:42:56.845</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Projekti\VS\emp-seminarska\Prevozi\Prevozi\bin\x86\Debug\Core\System.AppContext.dll">
       <PackagePath>System.AppContext.dll</PackagePath>

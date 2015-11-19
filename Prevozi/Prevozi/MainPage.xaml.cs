@@ -1,26 +1,36 @@
-﻿using System.Net.Http;
+﻿using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net.Http;
+using System.Runtime.CompilerServices;
+using System.Runtime.Serialization.Json;
+using System.Text;
+using System.Threading.Tasks;
 using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
+using Prevozi.Models;
 
 namespace Prevozi
-{
+{   
     public sealed partial class MainPage : Page
     {
         public MainPage()
         {
             this.InitializeComponent();
-            
-            HttpClient http = new HttpClient();
-            string url = "https://prevoz.org/api/search/shares/?f=Ljubljana&t=Postojna";
-            var response = http.GetAsync(url);
-            var jsonMessage = response.Result.Content.ReadAsStringAsync();
         }
 
-        private void btnHamburger_Click(object sender, RoutedEventArgs e)
+        private void HamburgerButton_Click(object sender, RoutedEventArgs e)
         {
             MySplitView.IsPaneOpen = !MySplitView.IsPaneOpen;
+        }
+
+        private void IconsListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (ShareListBoxItem.IsSelected) { ResultTextBlock.Text = "Share"; }
+            else if (FavoritesListBoxItem.IsSelected) { ResultTextBlock.Text = "Favorites"; }
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -49,7 +59,15 @@ namespace Prevozi
 
         private void btnIskanje_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof (ListCarshare));
+            //podatki o željah prevoza
+            string[] userData = new string[3];
+            userData[0] = txtOdhod.Text;
+            userData[1] = txtPrihod.Text;
+            userData[2] = dpCasOdhoda.Date.Year.ToString() + "-" + 
+                          dpCasOdhoda.Date.Month.ToString() + "-" +
+                          dpCasOdhoda.Date.Day.ToString();
+          
+            Frame.Navigate(typeof (ListCarshare), userData);
         }
     }
 }
