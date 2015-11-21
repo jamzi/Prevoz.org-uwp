@@ -8,7 +8,9 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <ListView x:ConnectionId='1' x:Name="lvCarshareDetails" HorizontalAlignment="Left" Height="491" Margin="10,149,0,0" VerticalAlignment="Top" Width="340"/>
+        <TextBlock x:ConnectionId='1' x:Name="tblDetails" Margin="10,10,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="29">Več o prevozu:</TextBlock>
+        <TextBlock x:ConnectionId='2' x:Name="tblDetailsPrevoz" Margin="10,44,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="29"></TextBlock>
+        <ListView x:ConnectionId='3' x:Name="lvCarshareDetails" HorizontalAlignment="Left" Height="469" Margin="10,86,0,0" VerticalAlignment="Top" Width="340"/>
 
     </Grid>
 </Page>

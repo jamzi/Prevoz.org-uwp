@@ -34,13 +34,23 @@ namespace Prevozi
             //dobimo userdata prek e argumenta
             CarshareList carshareDetail = (CarshareList)e.Parameter;
 
-            lvCarshareDetails.Items.Add("Od: "  + carshareDetail.from);
-            lvCarshareDetails.Items.Add("Do: " + carshareDetail.to);
-            lvCarshareDetails.Items.Add("Avtor: " + carshareDetail.author);
-            lvCarshareDetails.Items.Add("Čas: " + carshareDetail.time);
-            lvCarshareDetails.Items.Add("Datum: " + carshareDetail.date);
-            lvCarshareDetails.Items.Add("Zavarovan: " + carshareDetail.insured);
-            lvCarshareDetails.Items.Add("Komentar: " + carshareDetail.comment);
+            tblDetailsPrevoz.Text = carshareDetail.from + " -> " + carshareDetail.to;
+
+            lvCarshareDetails.Items.Add("Čas: " + carshareDetail.date);
+            lvCarshareDetails.Items.Add("Število oseb: " + carshareDetail.num_people);          
+            lvCarshareDetails.Items.Add("Strošek: " + carshareDetail.price + "€");
+            lvCarshareDetails.Items.Add("Telefon: " + carshareDetail.contact);
+            //TODO
+            //lahko direktno pokličem oz. pošljemo sms
+            if (carshareDetail.insured == "true")
+            {
+                lvCarshareDetails.Items.Add("Zavarovanje: " + "imam nezgodno zavarovanje za potnike");
+            }
+            if (carshareDetail.comment != "")
+            {
+                lvCarshareDetails.Items.Add("Komentar: " + carshareDetail.comment);
+            }    
+            lvCarshareDetails.Items.Add("Objavljeno: " + carshareDetail.added);
 
             //go back
             Frame rootFrame = Window.Current.Content as Frame;

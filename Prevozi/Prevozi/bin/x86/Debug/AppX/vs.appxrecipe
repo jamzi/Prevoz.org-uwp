@@ -22,7 +22,7 @@
     <AppXManifest Include="D:\Projekti\VS\emp-seminarska\Prevozi\Prevozi\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-11-19T12:42:57.170</Modified>
+      <Modified>2015-11-21T13:10:06.719</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -66,7 +66,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Projekti\VS\emp-seminarska\Prevozi\Prevozi\bin\x86\Debug\Core\entrypoint\Prevozi.exe">
       <PackagePath>entrypoint\Prevozi.exe</PackagePath>
-      <Modified>2015-11-19T12:42:56.271</Modified>
+      <Modified>2015-11-21T13:10:05.743</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Projekti\VS\emp-seminarska\Prevozi\Prevozi\bin\x86\Debug\Core\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -86,11 +86,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Projekti\VS\emp-seminarska\Prevozi\Prevozi\bin\x86\Debug\Core\Prevozi.exe">
       <PackagePath>Prevozi.exe</PackagePath>
-      <Modified>2015-11-19T12:42:57.168</Modified>
+      <Modified>2015-11-21T13:10:06.717</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Projekti\VS\emp-seminarska\Prevozi\Prevozi\bin\x86\Debug\Core\Prevozi.xr.xml">
       <PackagePath>Prevozi.xr.xml</PackagePath>
-      <Modified>2015-11-19T12:32:19.343</Modified>
+      <Modified>2015-11-21T12:44:07.785</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Projekti\VS\emp-seminarska\Prevozi\Prevozi\bin\x86\Debug\Core\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
@@ -98,7 +98,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Projekti\VS\emp-seminarska\Prevozi\Prevozi\bin\x86\Debug\Core\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2015-11-19T12:42:56.845</Modified>
+      <Modified>2015-11-21T13:10:06.362</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Projekti\VS\emp-seminarska\Prevozi\Prevozi\bin\x86\Debug\Core\System.AppContext.dll">
       <PackagePath>System.AppContext.dll</PackagePath>

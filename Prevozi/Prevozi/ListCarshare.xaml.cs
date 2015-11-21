@@ -17,6 +17,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Newtonsoft.Json;
 using Prevozi.Models;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
@@ -37,14 +38,27 @@ namespace Prevozi
         public async void CallGetCarshares(string fromCity, string toCity, string date)
         {
             string url = String.Format("https://prevoz.org/api/search/shares/?f=" + fromCity + "&t=" + toCity  + "&d=" + date);
+
             var data = await GetCarshares(url);
 
             //globalna spremenljivka
             carshares = data.carshare_list;
-            foreach (var carshare in carshares)
+
+            if (carshares.Count != 0)
             {
-                lvCarshares.Items.Add(carshare.from + " " + carshare.to + " " + carshare.date_iso8601);
+                tblInfoPrevoz.Text = "Ponujeni prevozi (" + fromCity + " --> " + toCity + ")";
+                foreach (var carshare in carshares)
+                {
+                    if (lvCarshares.Items != null) lvCarshares.Items.Add(carshare.date + " " + carshare.price + "€");
+                }
             }
+            else
+            {
+                tblInfoPrevoz.Text = "Ni prevozov za določeno pot in termin";
+            }
+           
+
+
 
         }
 
