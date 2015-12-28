@@ -1,30 +1,59 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.IO;
-using System.Net.Http;
-using System.Runtime.CompilerServices;
-using System.Runtime.Serialization.Json;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text.RegularExpressions;
 using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Navigation;
 using Prevozi.Models;
+using System;
+using System.Collections.Generic;
+using Windows.Foundation;
+using Windows.UI.Xaml.Media;
+using System.Diagnostics;
+using System.Net.Http;
+using Newtonsoft.Json;
+using System.Threading.Tasks;
 
 namespace Prevozi
-{   
+{
     public sealed partial class MainPage : Page
     {
+        Windows.Storage.ApplicationDataContainer localSettings =
+                Windows.Storage.ApplicationData.Current.LocalSettings;
+
+        List<CarshareSearch> last_searches = new List<CarshareSearch>();
+
+
         public MainPage()
         {
             this.InitializeComponent();
-        }
+
+            //zadnja iskanja
+            if (localSettings.Values["lastCarshare"] != null)
+            {
+            
+                lvCarshareRecent.Items.Clear();
+                String data = localSettings.Values["lastCarshare"].ToString();
+                String[] last_carshares = data.Split(new string[] { "\n", "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
+                for(int i = 0; i < last_carshares.Length; i++)
+                {
+                    string[] carshare_detail = last_carshares[i].Split(new char[0]);
+                    CarshareSearch search = new CarshareSearch(
+                    carshare_detail[0], carshare_detail[2], carshare_detail[3], carshare_detail[4], carshare_detail[5]);
+                    last_searches.Add(search);
+                    lvCarshareRecent.Items.Add(search.From +  " -> " + search.To + ", " + search.Day + "-" + search.Month + "-" + search.Year) ;
+                }
+                    
+                }
+            }
+                
+        
 
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+
+            //back 
             Frame rootFrame = Window.Current.Content as Frame;
 
             string myPages = "";
@@ -44,36 +73,73 @@ namespace Prevozi
                 // Remove the UI from the title bar if in-app back stack is empty.
                 SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility =
                     AppViewBackButtonVisibility.Collapsed;
-            }    
+            }
+        }
+
+        private async void callApi(string id)
+        {
+            var CarshareID = await APICall.GetCarsharesID(id);
+            if(CarshareID != null)
+            {
+                Frame.Navigate(typeof(CarshareDetails), CarshareID);
+            }
+            
         }
 
         private void btnIskanje_Click(object sender, RoutedEventArgs e)
         {
-            //podatki o željah prevoza
-            string[] userData = new string[3];
-            userData[0] = txtOdhod.Text;
-            userData[1] = txtPrihod.Text;
-            userData[2] = dpCasOdhoda.Date.Year.ToString() + "-" +
-                          dpCasOdhoda.Date.Month.ToString() + "-" +
-                          dpCasOdhoda.Date.Day.ToString();
-
-            if (userData[0] != null && userData[0] != "" && userData[1] != null && userData[1] != "")
+            if (!string.IsNullOrEmpty(txtPrihod.Text) &&
+                !string.IsNullOrEmpty(txtOdhod.Text))
             {
-                Windows.Storage.ApplicationDataContainer localSettings =
-                    Windows.Storage.ApplicationData.Current.LocalSettings;
-                Windows.Storage.StorageFolder localFolder =
-                    Windows.Storage.ApplicationData.Current.LocalFolder;
-                localSettings.Values["recentSearch"] += userData[0] + userData[1] + "\n";
+                CarshareSearch search = new CarshareSearch(
+                    txtOdhod.Text, txtPrihod.Text,
+                    dpCasOdhoda.Date.Year.ToString(),
+                    dpCasOdhoda.Date.Month.ToString("00"),
+                    dpCasOdhoda.Date.Day.ToString("00"));
 
-                tblZadnjaIskanjaData.Text = localSettings.Values["recentSearch"].ToString();
-                Frame.Navigate(typeof(ListCarshare), userData);
+                localSettings.Values["lastCarshare"] += search.From + " -> " + search.To + " " + search.Year + " " + search.Month + " " + search.Day + "\n" ; 
+
+                Frame.Navigate(typeof (ListCarshare), search);
             }
             else
             {
                 tblInfo.Text = "Vnesite kraj odhoda in kraj prihoda!";
-            }         
+            }
+
         }
 
- 
+        private void lvCarshareRecent_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            ListView lv = sender as ListView;
+            if (lv != null)
+            {
+                Frame.Navigate(typeof(ListCarshare), last_searches[lv.SelectedIndex]);
+            }
+        }
+
+        // Gets the rectangle of the element
+        public static Rect GetElementRect(FrameworkElement element)
+        {
+            GeneralTransform buttonTransform = element.TransformToVisual(null);
+            Point point = buttonTransform.TransformPoint(new Point());
+            return new Rect(point, new Size(element.ActualWidth, element.ActualHeight));
+        }
+
+        private void btnClearLastSearch_Click(object sender, RoutedEventArgs e)
+        {
+            lvCarshareRecent.Items.Clear();
+            localSettings.Values["lastCarshare"] = "";
+        }
+
+        private void SplitViewButton_Click(object sender, RoutedEventArgs e)
+        {
+            MySplitView.IsPaneOpen = !MySplitView.IsPaneOpen;
+        }
+
+        private void btnPonudba_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
+    
 }

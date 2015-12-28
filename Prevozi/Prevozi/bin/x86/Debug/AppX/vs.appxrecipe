@@ -10,7 +10,7 @@
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>a47132a4-938b-4f91-b62b-84c5472406f7</PackageIdentityName>
     <IntermediateOutputPath>D:\Projekti\VS\emp-seminarska\Prevozi\Prevozi\obj\x86\Debug\</IntermediateOutputPath>
-    <RegisteredManifestChecksum>E91C7B40370E350F1AB05DC9E5B195E80010FC56224CE196BABE2B4A6796EFC1</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>96DD52814ECA158E3FC0ACA7C63A32F68490FB5204136F918C4DADE4BBBECF9C</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>a47132a4-938b-4f91-b62b-84c5472406f7_1.0.0.0_x86__fhscdzm74wqny</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>a47132a4-938b-4f91-b62b-84c5472406f7_fhscdzm74wqny!App</RegisteredUserModeAppID>
     <RegisteredPackageID>a47132a4-938b-4f91-b62b-84c5472406f7</RegisteredPackageID>
@@ -22,7 +22,7 @@
     <AppXManifest Include="D:\Projekti\VS\emp-seminarska\Prevozi\Prevozi\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-11-21T13:10:06.719</Modified>
+      <Modified>2015-12-28T15:22:42.786</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -33,27 +33,31 @@
     <AppxPackagedFile Include="D:\Projekti\VS\emp-seminarska\Prevozi\Prevozi\bin\x86\Debug\Core\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-08-27T00:38:34.000</Modified>
+      <Modified>2015-12-28T14:51:44.046</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Projekti\VS\emp-seminarska\Prevozi\Prevozi\bin\x86\Debug\Core\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-08-27T00:38:34.000</Modified>
+      <Modified>2015-11-21T13:33:19.548</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Projekti\VS\emp-seminarska\Prevozi\Prevozi\bin\x86\Debug\Core\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-08-27T00:38:34.000</Modified>
+      <Modified>2015-11-21T13:31:45.871</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Projekti\VS\emp-seminarska\Prevozi\Prevozi\bin\x86\Debug\Core\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-08-27T00:38:34.000</Modified>
+      <Modified>2015-11-21T13:32:53.537</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Projekti\VS\emp-seminarska\Prevozi\Prevozi\bin\x86\Debug\Core\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2015-08-27T00:38:34.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Projekti\VS\emp-seminarska\Prevozi\Prevozi\bin\x86\Debug\Core\Assets\tile.png">
+      <PackagePath>Assets\tile.png</PackagePath>
+      <Modified>2015-12-12T10:29:46.898</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Projekti\VS\emp-seminarska\Prevozi\Prevozi\bin\x86\Debug\Core\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
@@ -66,7 +70,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Projekti\VS\emp-seminarska\Prevozi\Prevozi\bin\x86\Debug\Core\entrypoint\Prevozi.exe">
       <PackagePath>entrypoint\Prevozi.exe</PackagePath>
-      <Modified>2015-11-21T13:10:05.743</Modified>
+      <Modified>2015-12-28T15:22:41.847</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Projekti\VS\emp-seminarska\Prevozi\Prevozi\bin\x86\Debug\Core\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -86,11 +90,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Projekti\VS\emp-seminarska\Prevozi\Prevozi\bin\x86\Debug\Core\Prevozi.exe">
       <PackagePath>Prevozi.exe</PackagePath>
-      <Modified>2015-11-21T13:10:06.717</Modified>
+      <Modified>2015-12-28T15:22:42.784</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Projekti\VS\emp-seminarska\Prevozi\Prevozi\bin\x86\Debug\Core\Prevozi.xr.xml">
       <PackagePath>Prevozi.xr.xml</PackagePath>
-      <Modified>2015-11-21T12:44:07.785</Modified>
+      <Modified>2015-12-28T14:42:16.236</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Projekti\VS\emp-seminarska\Prevozi\Prevozi\bin\x86\Debug\Core\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
@@ -98,7 +102,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Projekti\VS\emp-seminarska\Prevozi\Prevozi\bin\x86\Debug\Core\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2015-11-21T13:10:06.362</Modified>
+      <Modified>2015-12-28T15:22:42.331</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Projekti\VS\emp-seminarska\Prevozi\Prevozi\bin\x86\Debug\Core\System.AppContext.dll">
       <PackagePath>System.AppContext.dll</PackagePath>

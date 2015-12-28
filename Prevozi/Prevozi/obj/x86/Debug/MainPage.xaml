@@ -7,103 +7,76 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid x:ConnectionId='1' Name="LayoutRoot" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <RelativePanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Button x:ConnectionId='1' Name="SplitViewButton" Background="Transparent" Padding="0,-6" Margin="12"                              >
+            <FontIcon FontFamily="{ThemeResource ContentControlThemeFontFamily}" Glyph="&#x2261;" FontSize="32" Margin="0,-8,0,0"/>
+        </Button>
+        <TextBlock Style="{ThemeResource SubheaderTextBlockStyle}" Text="Poišči prevoz" 
+                   RelativePanel.RightOf="SplitViewButton" />
+        <SplitView x:ConnectionId='2' x:Name="MySplitView" PaneBackground="{ThemeResource ApplicationPageBackgroundThemeBrush}" OpenPaneLength="300"
+                   RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.Below="SplitViewButton">
+            <SplitView.Pane>
+                <RelativePanel>
+                    <TextBlock x:ConnectionId='3' x:Name="tblIskanje" Width="290" HorizontalAlignment="Center" Margin="10,15,0,0" >Iskanje</TextBlock>
+                    <AutoSuggestBox x:ConnectionId='4' x:Name="txtOdhod" HorizontalAlignment="Center" Margin="7,45,-50,0" VerticalAlignment="Top" Width="293" PlaceholderText="Kraj odhoda" Height="31"/>
+                    <AutoSuggestBox x:ConnectionId='5' x:Name="txtPrihod" HorizontalAlignment="Center" Margin="7,83,-50,-9.667" VerticalAlignment="Top" PlaceholderText="Kraj prihoda" Width="293"/>
+                    <DatePicker x:ConnectionId='6' x:Name="dpCasOdhoda" HorizontalAlignment="Left" Margin="7,120,-3,-4.667"  VerticalAlignment="Top" Width="88" />
+                    <Button x:ConnectionId='7' x:Name="btnIskanje" Content="Išči" HorizontalAlignment="Center" Margin="7,169,-49.333,-23" VerticalAlignment="Top" Width="293" Height="40"                         />
+
+                    <TextBlock x:ConnectionId='8' x:Name="tblInfo" HorizontalAlignment="Center" Margin="57,190, 50, 50" TextWrapping="Wrap" Text=""/>
+                </RelativePanel>
+            </SplitView.Pane>
+
+            <ScrollViewer Margin="10,-9,-10,9.333">
+                <RelativePanel>
+                    <TextBlock x:ConnectionId='9' x:Name="tblZadnjaIskanja" Width="296" HorizontalAlignment="Center" Margin="25,25,30,391">Zadnja iskanja</TextBlock>
+                    <ListView x:ConnectionId='10' x:Name="lvCarshareRecent" HorizontalAlignment="Left" Height="250" Margin="25,70,0,0" VerticalAlignment="Top" Width="296"                                 />                
+                    <Button x:ConnectionId='11' x:Name="btnClearLastSearch" Content="Pobriši zadnja iskanja" HorizontalAlignment="Left" Margin="25,350,0,0" VerticalAlignment="Top"                                  Width="294"/>
+                </RelativePanel>
+            </ScrollViewer>
+        </SplitView>
+
         <VisualStateManager.VisualStateGroups>
-            <VisualStateGroup x:ConnectionId='2' x:Name="VisualStateGroup">
-                <VisualState x:ConnectionId='3' x:Name="Mobile">
+            <VisualStateGroup>
+                <VisualState>
+                    <!-- VisualState to be triggered when window width is >=720 effective pixels -->
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="720" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <!-- Widest possible layout moves some elements around to optimize for more available width 
+                        and keeps SplitView pane always showing inline -->
+                        <Setter Target="MySplitView.DisplayMode" Value="Inline" />
+                        <Setter Target="MySplitView.IsPaneOpen" Value="True" />
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState>
+                    <!-- VisualState to be triggered when window width is >=548 and <720 effective pixels -->
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="548" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <!-- For intermediate window widths as well as most phones on landscape orientation, 
+                        this state keeps primary layout narrow while showing the splitview pane to take advantage of more available width than narrow layout -->
+                        <Setter Target="MySplitView.DisplayMode" Value="Inline" />
+                        <Setter Target="MySplitView.IsPaneOpen" Value="True" />
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState>
+                    <!-- VisualState to be triggered when window width is >=0 and <548 effective pixels -->
                     <VisualState.StateTriggers>
                         <AdaptiveTrigger MinWindowWidth="0" />
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
-                        <Setter Target="First.(Grid.Row)" Value="0" />
-                        <Setter Target="First.(Grid.Column)" Value="0" />
-                        <Setter Target="Second.(Grid.Row)" Value="1" />
-                        <Setter Target="Second.(Grid.Column)" Value="0" />
-                        <Setter Target="Third.(Grid.Row)" Value="2" />
-                        <Setter Target="Third.(Grid.Column)" Value="0" />
-
-                        <Setter Target="First.(Grid.ColumnSpan)" Value="3" />
-                        <Setter Target="Second.(Grid.ColumnSpan)" Value="3" />
-                        <Setter Target="Third.(Grid.ColumnSpan)" Value="3" />
-                    </VisualState.Setters>
-                </VisualState>
-                <VisualState x:ConnectionId='4' x:Name="Tablet">
-                    <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="0" />
-                    </VisualState.StateTriggers>
-                    <VisualState.Setters>
-                        <Setter Target="First.(Grid.Row)" Value="0" />
-                        <Setter Target="First.(Grid.Column)" Value="0" />
-                        <Setter Target="Second.(Grid.Row)" Value="1" />
-                        <Setter Target="Second.(Grid.Column)" Value="0" />
-                        <Setter Target="Third.(Grid.Row)" Value="1" />
-                        <Setter Target="Third.(Grid.Column)" Value="2" />
-
-                        <Setter Target="First.(Grid.ColumnSpan)" Value="2" />
-                        <Setter Target="Second.(Grid.ColumnSpan)" Value="2" />
-                        <Setter Target="Third.(Grid.ColumnSpan)" Value="2" />
-                    </VisualState.Setters>
-                </VisualState>
-                <VisualState x:ConnectionId='5' x:Name="Desktop">
-                    <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="1024" />
-                    </VisualState.StateTriggers>
-                    <VisualState.Setters>
-                        <Setter Target="First.(Grid.Row)" Value="0" />
-                        <Setter Target="First.(Grid.Column)" Value="0" />
-                        <Setter Target="Second.(Grid.Row)" Value="0" />
-                        <Setter Target="Second.(Grid.Column)" Value="1" />
-                        <Setter Target="Third.(Grid.Row)" Value="0" />
-                        <Setter Target="Third.(Grid.Column)" Value="2" />
-
-                        <Setter Target="First.(Grid.ColumnSpan)" Value="1" />
-                        <Setter Target="Second.(Grid.ColumnSpan)" Value="1" />
-                        <Setter Target="Third.(Grid.ColumnSpan)" Value="1" />
+                        <!-- For the most narrow windows and phones in portrait orientation, this state collapses the SplitView pane into overlay mode
+                        and adds dynamic RelativePanel constraints that puts all elements stacked below each other -->
+                        <Setter Target="MySplitView.DisplayMode" Value="Overlay" />
+                        <Setter Target="MySplitView.IsPaneOpen" Value="False" />
                     </VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <ScrollViewer Grid.Row="1" Margin="10,0,-10,0">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
 
-                <StackPanel x:ConnectionId='6' Name="First" Margin="0,10,20,10">
-                    <TextBlock x:ConnectionId='11' x:Name="tblIskanje" Width="300" HorizontalAlignment="Center" Margin="0,10">Iskanje</TextBlock>
-                    <AutoSuggestBox x:ConnectionId='12' x:Name="txtOdhod" HorizontalAlignment="Center" Margin="0,10" VerticalAlignment="Top" Width="300" PlaceholderText="Kraj odhoda" Height="31"/>
-                    <AutoSuggestBox x:ConnectionId='13' x:Name="txtPrihod" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Top" PlaceholderText="Kraj prihoda" Width="300"/>
-                    <DatePicker x:ConnectionId='14' x:Name="dpCasOdhoda" HorizontalAlignment="Center" Margin="0,10,0,0"  VerticalAlignment="Top" Width="300" />
-                    <Button x:ConnectionId='15' x:Name="btnIskanje" Content="Išči" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Width="300" Height="39"                         />
-                    <TextBlock x:ConnectionId='16'  Foreground="DarkRed" x:Name="tblInfo" Width="300" HorizontalAlignment="Center" Margin="0,10"></TextBlock>
-                    
-                    <TextBlock x:ConnectionId='17' x:Name="tblZadnjaIskanja" Width="300" HorizontalAlignment="Center" Margin="0,50,0,0">Zadnja iskanja</TextBlock>
-                    <TextBlock x:ConnectionId='18' x:Name="tblZadnjaIskanjaData" Width="300" HorizontalAlignment="Center" Margin="0,50,0,0"></TextBlock>
-
-                </StackPanel>
-                <StackPanel x:ConnectionId='7' Name="Second" Grid.Row="1" Margin="20,20,0,0">
-                    <TextBlock TextWrapping="Wrap">Rezultat iskanja</TextBlock>
-                    <ListView x:ConnectionId='10' x:Name="lvCarshares" HorizontalAlignment="Left" Height="395" Margin="5,235,0,0" VerticalAlignment="Top" Width="350"/>
-                </StackPanel>
-                <StackPanel x:ConnectionId='8' Name="Third" Grid.Row="2" Margin="20,20,0,0">
-                    <TextBlock TextWrapping="Wrap">Podrobno iskanje</TextBlock>
-                    <ListView x:ConnectionId='9' x:Name="lvCarshareDetails" HorizontalAlignment="Left" Height="395" Margin="5,235,0,0" VerticalAlignment="Top" Width="350"/>
-                </StackPanel>
-            </Grid>
-        </ScrollViewer>
-    </Grid>
-
-
+    </RelativePanel>
 </Page>
 

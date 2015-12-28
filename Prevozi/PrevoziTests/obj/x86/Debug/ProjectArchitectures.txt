@@ -1,0 +1,1 @@
+D:\Projekti\VS\emp-seminarska\Prevozi\PrevoziTests\PrevoziTests.csproj;x86

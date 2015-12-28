@@ -37,7 +37,7 @@
     <build:Item Name="TargetFrameworkMoniker" Value=".NETCore,Version=v5.0" />
     <build:Item Name="VisualStudio" Version="14.0" />
     <build:Item Name="VisualStudioEdition" Value="Microsoft Visual Studio Community 2015" />
-    <build:Item Name="OperatingSystem" Version="10.0.10532.0 (th2_release.150822-1406)" />
+    <build:Item Name="OperatingSystem" Version="10.0.11082.1000 (rs1_release.151210-2021)" />
     <build:Item Name="Microsoft.Build.AppxPackage.dll" Version="14.0.23315.0" />
     <build:Item Name="ProjectGUID" Value="{8F81F54E-40C9-4AF7-9DE3-C0240078C741}" />
     <build:Item Name="OptimizingToolset" Value="None" />

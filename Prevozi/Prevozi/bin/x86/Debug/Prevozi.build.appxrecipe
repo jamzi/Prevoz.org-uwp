@@ -41,6 +41,9 @@
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Projekti\VS\emp-seminarska\Prevozi\Prevozi\bin\x86\Debug\Core\Assets\tile.png">
+      <PackagePath>Assets\tile.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Projekti\VS\emp-seminarska\Prevozi\Prevozi\bin\x86\Debug\Core\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>

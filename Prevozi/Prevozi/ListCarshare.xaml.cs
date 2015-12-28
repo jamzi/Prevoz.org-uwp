@@ -37,7 +37,8 @@ namespace Prevozi
 
         public async void CallGetCarshares(string fromCity, string toCity, string date)
         {
-            string url = String.Format("https://prevoz.org/api/search/shares/?f=" + fromCity + "&t=" + toCity  + "&d=" + date);
+            
+            string url = String.Format("https://prevoz.org/api/search/shares/?f=" + fromCity + "&fc=SI&t=" + toCity  + "&tc=SI&d=" +  date);
 
             var data = await GetCarshares(url);
 
@@ -56,10 +57,6 @@ namespace Prevozi
             {
                 tblInfoPrevoz.Text = "Ni prevozov za določeno pot in termin";
             }
-           
-
-
-
         }
 
         public static async Task<CarshareWrapper> GetCarshares(string url)
@@ -69,10 +66,8 @@ namespace Prevozi
 
             string jsonText = response.Content.ReadAsStringAsync().Result;
 
-            var serializer = new DataContractJsonSerializer(typeof(CarshareWrapper));
-            var ms = new MemoryStream(Encoding.UTF8.GetBytes(jsonText));
-
-            var result = (CarshareWrapper)serializer.ReadObject(ms);
+            CarshareWrapper result = JsonConvert.DeserializeObject<CarshareWrapper>(jsonText,
+                    new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
 
             return result;
 
@@ -82,13 +77,20 @@ namespace Prevozi
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             //dobimo userdata prek e argumenta
-            string[] userData = (string[])e.Parameter;
-            //pokličem API
-            CallGetCarshares(userData[0], userData[1], userData[2]);
+            CarshareSearch carshareSearch = (CarshareSearch)e.Parameter;
 
-           
+            if (carshareSearch != null)
+            {
+                //pokličem API
+                CallGetCarshares(
+                carshareSearch.From,
+                carshareSearch.To,
+                carshareSearch.Year + "-" +
+                carshareSearch.Month + "-" +
+                carshareSearch.Day);
 
-            //go back
+            }
+            //Back Button
             Frame rootFrame = Window.Current.Content as Frame;
 
             string myPages = "";
@@ -113,9 +115,11 @@ namespace Prevozi
         private void lvCarshares_Tapped(object sender, TappedRoutedEventArgs e)
         {
             ListView lv = sender as ListView;
-            var id_carshare = lv.SelectedIndex;
-            Frame.Navigate(typeof(CarshareDetails), carshares[id_carshare]);
-            
+            if (lv != null)
+            {
+                var idCarshare = lv.SelectedIndex;
+                Frame.Navigate(typeof(CarshareDetails), carshares[idCarshare]);
+            }
         }
 
  
